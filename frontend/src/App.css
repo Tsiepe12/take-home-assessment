@@ -1,0 +1,345 @@
+.App {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.App-header {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.App-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 0.5rem;
+}
+
+/* Projects section */
+.projects-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.projects-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.projects-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.wallet-row {
+  margin-left: auto;
+}
+
+.connect-wallet-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.connect-wallet-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.wallet-address {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+  color: #155724;
+  background: #d4edda;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #c3e6cb;
+  font-weight: 600;
+}
+
+.wallet-error,
+.projects-error {
+  width: 100%;
+  margin: 0.5rem 0 0;
+  color: #721c24;
+  font-size: 0.9rem;
+  background: #f8d7da;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+}
+
+.projects-loading {
+  color: #666;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.project-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.project-chain {
+  color: #555;
+  font-size: 0.9rem;
+  background: #e9ecef;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+}
+
+.project-status {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  background: #e9ecef;
+  color: #333;
+  font-weight: 600;
+}
+
+.project-status--active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.project-status--in-progress {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.project-status--archived {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Transactions section */
+.transactions-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.transactions-section h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.transactions-connect-prompt,
+.transactions-empty {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+.transactions-loading {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.transactions-error {
+  color: #721c24;
+  background: #f8d7da;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  text-align: center;
+}
+
+.transactions-table {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.transactions-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.transactions-table th {
+  background: #f8f9fa;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.transactions-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.95rem;
+}
+
+.transactions-table tr:hover {
+  background: #f8f9fa;
+}
+
+.transactions-hash,
+.transactions-address {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: #495057;
+}
+
+.transactions-value {
+  font-weight: 600;
+  color: #333;
+}
+
+.transactions-token {
+  background: #e9ecef;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.transactions-status {
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.transactions-status--confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.transactions-status--pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.transactions-status--failed {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+  
+  .projects-section,
+  .transactions-section {
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+  
+  .projects-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .wallet-row {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .project-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .transactions-table {
+    font-size: 0.85rem;
+  }
+  
+  .transactions-table th,
+  .transactions-table td {
+    padding: 0.5rem;
+  }
+}
